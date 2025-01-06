@@ -1,0 +1,68 @@
+nav {
+  background-color: rgb(239, 158, 175); 
+  color: rgb(196, 236, 255);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 40px; 
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  position: absolute; 
+  left: 40px; 
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2em; 
+}
+
+.nav-item a:hover {
+  color: #153c6a;
+}
+
+.sathru-icon:hover {
+  color: #153c6a;
+}
+
+footer {
+  background-color: #7ce8e2;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  color: #333;
+}
