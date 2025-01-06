@@ -20,9 +20,9 @@
 //     .catch((err)=>{
 //         console.log(err)
 //     })
-//   },[])
+//   },[id])
 
-//   const UpdateUser = (e) => {
+//   const updateUser = (e) => {
 //     e.preventDefault();
 //     axios.put(`https://backend-e1oc.onrender.com/api/user/update/${id}`,{name,email,address})
 //     .then((result)=>{
@@ -38,7 +38,7 @@
 //     <div>
 //      <div>
 //       <h1>Update</h1>
-//       <form onSubmit={UpdateUser}>
+//       <form onSubmit={updateUser}>
 //         <label>Name</label>
 //         <input type="text" value={name} onChange={(e)=>setName(e.target.value)}/><br/>
 //         <label>Email</label>
@@ -52,11 +52,11 @@
 //   )
 // }
 
-// export default UpdateUser
+// export default UpdateUser;
 
 
 import React from 'react'
-import { useState} from 'react'
+import { useState, useEffect } from 'react'
 import { useParams,useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
@@ -67,6 +67,18 @@ const UpdateUser = () => {
   const[email,setEmail]=useState();
   const[address,setAddress]=useState();
   const navigate=useNavigate();
+
+  useEffect(() => {
+    axios.get(`https://backend-e1oc.onrender.com/api/user/update/${id}`)
+      .then(result => {
+        setName(result.data.name);
+        setEmail(result.data.email);
+        setAddress(result.data.address);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }, [id]);
 
  
   const update=(e)=>{

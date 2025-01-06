@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import './main.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -24,7 +25,7 @@ const deleteUser = (id) => {
         
 }
   return (
-    <div>
+    <div className="Container">
         <center><h1>User Details</h1></center>
         <Link  to ="/create">Create User</Link>
         <table>
