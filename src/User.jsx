@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './main.css';
+import './User.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -27,12 +27,13 @@ const deleteUser = (id) => {
   return (
     <div className="Container">
         <center><h1>User Details</h1></center>
-        <Link  to ="/create">Create User</Link>
+        <Link  to ="/create" className='create-user-link'>Create User</Link>
         <table>
            <tr>  
                 <th>Name</th>
                 <th>Email</th>
                 <th>Address</th>
+                <th>Action</th>
            </tr>
           {
                 user.map((users)=>(
@@ -41,7 +42,7 @@ const deleteUser = (id) => {
                         <td>{users.email}</td>
                         <td>{users.address}</td>
                         <td>
-                       <button> <Link  to ="/update">update</Link></button>
+                       <button> <Link  to ={`/update/${users._id}`}>update</Link></button>
                         <button onClick ={()=>deleteUser(users._id)}>Delete</button>
                         </td>
 
